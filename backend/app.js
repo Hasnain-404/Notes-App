@@ -35,6 +35,12 @@ app.use(cors({
     credentials: true,
 }));
 
+app.use((req, res, next) => {
+    console.log("Headers:", req.headers);
+    console.log("Cookies:", req.cookies);
+    next();
+});
+
 
 app.use(clerkMiddleware())
 
