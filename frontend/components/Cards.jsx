@@ -48,7 +48,7 @@ const Cards = ({ filter, section, reloadCards }) => {
 
     const handleTrash = async (id) => {
         try {
-            await axios.delete(`/api/card/delete/${id}`);
+            await axios.delete(`https://notes-app-87nm.onrender.com/card/delete/${id}`);
             setCardInfo(prev => prev.filter(card => card._id !== id));
         } catch (error) {
             console.log("Error trashing card:", error);
@@ -57,7 +57,7 @@ const Cards = ({ filter, section, reloadCards }) => {
 
     const handleUpdateCard = async (updatedCard) => {
         try {
-            await axios.put(`/api/card/update/${updatedCard._id}`, updatedCard);
+            await axios.put(`https://notes-app-87nm.onrender.com/card/update/${updatedCard._id}`, updatedCard);
             setCardInfo(prev =>
                 prev.map(card => (card._id === updatedCard._id ? updatedCard : card))
             );

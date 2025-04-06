@@ -8,7 +8,7 @@ export default function AuthComponents() {
 
     useEffect(() => {
         if (user) {
-            axios.post("/api/user/save-user", {
+            axios.post("https://notes-app-87nm.onrender.com/user/save-user", {
                 id: user.id,
                 firstName: user.firstName,
                 lastName: user.lastName,

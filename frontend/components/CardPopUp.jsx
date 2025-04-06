@@ -18,7 +18,7 @@ const CardPopUp = ({ closePopUp, onCardAdded }) => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post("/api/card/create", inputs);
+            const response = await axios.post("https://notes-app-87nm.onrender.com/card/create", inputs);
             console.log("Card saved:", response.data);
             if (onCardAdded) onCardAdded();
             closePopUp();
