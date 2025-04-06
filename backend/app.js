@@ -21,6 +21,7 @@ app.use(cookieParser())
 
 const allowedOrigins = [
     "https://notesapp-l2a7.onrender.com",
+    "https://notesappofficial.netlify.app/",
     "http://localhost:5173" // development frontend
 ];
 
