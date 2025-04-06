@@ -19,7 +19,7 @@ const Cards = ({ filter, section, reloadCards }) => {
         const fetchCards = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get("https://notes-app-87nm.onrender.com/api/card/get");
+                const response = await axios.get("https://notes-app-87nm.onrender.com/card/get");
                 setCardInfo(response.data);
             } catch (error) {
                 console.log("Error in getting cards", error.response.data);
