@@ -4,9 +4,9 @@ import { createCard, getCards, updateCard, deleteCard } from '../controllers/car
 
 const router = express.Router();
 
-router.post('/create', createCard);
-router.get('/get', getCards);
-router.put('/update/:id', updateCard);
-router.delete('/delete/:id', deleteCard);
+router.post('/create', userAuth, createCard);
+router.get('/get', userAuth, getCards);
+router.put('/update/:id', userAuth, updateCard);
+router.delete('/delete/:id', userAuth, deleteCard);
 
 export default router;

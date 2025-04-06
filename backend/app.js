@@ -14,10 +14,28 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser())
+// app.use(cors({
+//     origin: "https://notesapp-l2a7.onrender.com",
+//     credentials: true,
+// }))
+
+const allowedOrigins = [
+    "https://notesapp-l2a7.onrender.com",
+    "http://localhost:5173" // development frontend
+];
+
 app.use(cors({
-    origin: "https://notesapp-l2a7.onrender.com",
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true,
-}))
+}));
+
+
 app.use(clerkMiddleware())
 
 //connect to db
