@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './App.css'
 import App from './App.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
